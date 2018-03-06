@@ -34,6 +34,7 @@ public class Library {
     }
 
     public void populateBooksByGenreHash() {
+        booksByGenreHash.clear();
         for(Genre genre : Genre.values()) {
             int count = 0;
             for(Book book : this.collection) {
@@ -46,6 +47,7 @@ public class Library {
     }
 
     public int bookCountByGenre(Genre genre) {
+        populateBooksByGenreHash();
         return this.booksByGenreHash.get(genre);
     }
 
